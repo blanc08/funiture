@@ -1,7 +1,7 @@
 <section class="___class_+?155___">
     <div class="border-t border-b border-gray-200 py-12 mt-16 px-4">
         <div class="flex justify-center mb-8">
-            <img src="frontend/images/content/logo.png" alt="Luxspace | Fulfill your house with beautiful furniture" />
+            <img src="/frontend/images/content/logo.png" alt="Luxspace | Fulfill your house with beautiful furniture" />
         </div>
         <aside class="container mx-auto">
             <div class="flex flex-wrap -mx-4 justify-center">
