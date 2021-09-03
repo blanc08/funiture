@@ -21,8 +21,13 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('detail/{slug}', [FrontendController::class, 'detail'])->name('detail');
-Route::get('cart', [FrontendController::class, 'cart'])->name('cart');
-Route::get('checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
+    Route::post('/cart/{id}', [FrontendController::class, 'cardAdd'])->name('cart-add');
+    Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
