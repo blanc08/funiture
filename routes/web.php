@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductGalleryController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,16 +23,16 @@ Route::get('detail/{slug}', [FrontendController::class, 'detail'])->name('detail
 Route::get('cart', [FrontendController::class, 'cart'])->name('cart');
 Route::get('checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
 
-Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function ()
-{
+Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
-    Route::middleware(['admin'])->group(function ()
-    {
+    Route::middleware(['admin'])->group(function () {
         Route::resource('product', ProductController::class);
         Route::resource('product.gallery', ProductGalleryController::class)->shallow()->only([
             'index', 'create', 'store', 'destroy'
         ]);
+        Route::resource('transaction', TransactionController::class)->only([
+            'index', 'edit', 'show', 'update'
+        ]);
     });
-
 });
