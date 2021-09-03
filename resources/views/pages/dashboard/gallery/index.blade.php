@@ -10,13 +10,22 @@
         <script>
             // Ajax data table
             var datatable = $('#crudTable').DataTable({
-                ajax:{
+                ajax: {
                     url: '{!! url()->current() !!}'
                 },
-                columns:[
-                    {data: 'id', name: 'id', width: '5%'},
-                    {data: 'url', name: 'url'},
-                    {data: 'is_featured', name: 'is_featured'},
+                columns: [{
+                        data: 'id',
+                        name: 'id',
+                        width: '5%'
+                    },
+                    {
+                        data: 'url',
+                        name: 'url'
+                    },
+                    {
+                        data: 'is_featured',
+                        name: 'is_featured'
+                    },
                     {
                         data: 'action',
                         name: 'action',
