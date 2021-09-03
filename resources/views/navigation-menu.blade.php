@@ -26,6 +26,10 @@
                             :active="request()->routeIs('dashboard.transaction.index')">
                             {{ __('Transactions') }}
                         </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('dashboard.user.index') }}"
+                            :active="request()->routeIs('dashboard.user.index')">
+                            {{ __('Users') }}
+                        </x-jet-nav-link>
                     @endif
 
                 </div>
@@ -179,6 +183,10 @@
                 <x-jet-responsive-nav-link href="{{ route('dashboard.transaction.index') }}"
                     :active="request()->routeIs('dashboard.transaction.index')">
                     {{ __('Transactions') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('dashboard.user.index') }}"
+                    :active="request()->routeIs('dashboard.user.index')">
+                    {{ __('Users') }}
                 </x-jet-responsive-nav-link>
             @endif
 
