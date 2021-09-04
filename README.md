@@ -1,1 +1,3 @@
-ID MERCHANT : G364205027
+## Main
+
+    A simple Funiture Online Shop Application made of Laravel 8, with payment gateway MIDTRANS
